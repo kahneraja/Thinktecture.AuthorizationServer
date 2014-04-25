@@ -22,7 +22,7 @@ namespace Thinktecture.AuthorizationServer.Test
     
             _testConfig = new TestAuthorizationServerConfiguration();
             _storedGrantManager = new TestTokenHandleManager("abc", "codeclient", "https://validredirect");
-            _clientManager = new TestClientManager() { Id = "roclient", Secret = "secret", OAuthFlow = OAuthFlow.ResourceOwner };
+            _clientManager = new TestClientManager() { Id = "roclient", Secret = "secret", OAuthFlow = OAuthFlow.ResourceOwner, AllowRefreshTokens = false };
 
 
 

@@ -22,11 +22,10 @@ namespace Thinktecture.AuthorizationServer.Test
             DataProtectection.Instance = new NoProtection();
 
             _testConfig = new TestAuthorizationServerConfiguration();
-            _storedGrantManager = new TestTokenHandleManager("abc", "codeclient", "https://validredirect");
-            _clientManager = new TestClientManager() { Id = "client", Secret = "secret", OAuthFlow = OAuthFlow.Client };
-            _client = Principal.Create("Test",
-                                            new Claim("client_id", "client"),
-                                            new Claim("secret", "secret"));
+            _storedGrantManager = new TestTokenHandleManager("abc", "client", "https://validredirect");
+            
+            _clientManager = new TestClientManager() { Id = "client", Secret = "secret", OAuthFlow = OAuthFlow.Client, AllowRefreshTokens = false };
+            _client = Principal.Create("Test", new Claim("client_id", "client"), new Claim("secret", "secret"));
         }
 
         [TestMethod]
@@ -189,10 +188,11 @@ namespace Thinktecture.AuthorizationServer.Test
         {
             
             var validator = new TokenRequestValidator(_storedGrantManager, _clientManager);
+            
             var app = _testConfig.FindApplication("test");
             var request = new TokenRequest
             {
-                Grant_Type = OAuthConstants.GrantTypes.RefreshToken,
+                Grant_Type = OAuthConstants.GrantTypes.RefreshToken
             };
 
             try

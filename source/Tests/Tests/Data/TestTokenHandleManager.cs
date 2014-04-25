@@ -6,10 +6,10 @@ namespace Thinktecture.AuthorizationServer.Test
 {
     class TestTokenHandleManager : IStoredGrantManager
     {
-        string _clientId;
-        string _redirectUri;
-        string _id;
-        bool _expired;
+        public string _clientId { get; set; }
+        public string _redirectUri { get; set; }
+        public string _id { get; set; }
+        public bool _expired { get; set; }
 
         public TestTokenHandleManager(string id, string clientId, string redirectUri, bool expired = false)
         {
