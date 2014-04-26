@@ -114,7 +114,7 @@
     <Compile Include="Authorize Request Validation\AuthorizeRequest_Validation_General.cs" />
     <Compile Include="Data\TestAuthorizationServerConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Token Controller\TokenController_Post.cs" />
+    <Compile Include="Token Controller\TokenController_Post_ResourceOwnerFlow.cs" />
     <Compile Include="TokenRequest Validation\TokenRequest_Validation_Client.cs" />
     <Compile Include="TokenRequest Validation\TokenRequest_Validation_Assertion.cs" />
     <Compile Include="TokenRequest Validation\TokenRequest_Validation_RefreshToken.cs" />
