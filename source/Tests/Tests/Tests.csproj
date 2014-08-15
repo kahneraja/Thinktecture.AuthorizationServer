@@ -109,6 +109,7 @@
   <ItemGroup>
     <Compile Include="Authorize Request Validation\AuthorizeRequest_Validation_Code.cs" />
     <Compile Include="Authorize Request Validation\AuthorizeRequest_Validation_Token.cs" />
+    <Compile Include="Configuration\WhenCreatingNewOAuthClient.cs" />
     <Compile Include="Data\TestClientManager.cs" />
     <Compile Include="Data\TestTokenHandleManager.cs" />
     <Compile Include="Authorize Request Validation\AuthorizeRequest_Validation_General.cs" />
@@ -135,6 +136,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
